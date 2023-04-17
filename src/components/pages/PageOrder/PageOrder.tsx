@@ -62,7 +62,13 @@ export default function PageOrder() {
         if (!product) {
           throw new Error("Product not found");
         }
-        return { product, count: item.count };
+        return {
+          id: item.cartItemId,
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          product_id: product.id!,
+          count: item.count,
+          cart_id: item.cartItemId,
+        };
       });
     }
     return [];

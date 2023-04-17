@@ -48,22 +48,16 @@ export const availableProducts: AvailableProduct[] = products.map(
 
 export const cart: CartItem[] = [
   {
-    product: {
-      description: "Short Product Description1",
-      id: "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
-      price: 24,
-      title: "ProductOne",
-    },
+    id: "1",
+    cart_id: "2",
+    product_id: "3",
     count: 2,
   },
   {
-    product: {
-      description: "Short Product Description7",
-      id: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
-      price: 15,
-      title: "ProductName",
-    },
-    count: 5,
+    id: "2",
+    cart_id: "3",
+    product_id: "4",
+    count: 7,
   },
 ];
 
@@ -77,8 +71,16 @@ export const orders: Order[] = [
       comment: "",
     },
     items: [
-      { productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa", count: 2 },
-      { productId: "7567ec4b-b10c-45c5-9345-fc73c48a80a1", count: 5 },
+      {
+        productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
+        count: 2,
+        cartItemId: "1",
+      },
+      {
+        productId: "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
+        count: 5,
+        cartItemId: "2",
+      },
     ],
     statusHistory: [
       { status: OrderStatus.Open, timestamp: Date.now(), comment: "New order" },
@@ -92,7 +94,13 @@ export const orders: Order[] = [
       lastName: "Doe",
       comment: "Ship fast!",
     },
-    items: [{ productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa", count: 3 }],
+    items: [
+      {
+        productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
+        count: 32,
+        cartItemId: "3",
+      },
+    ],
     statusHistory: [
       {
         status: OrderStatus.Sent,
